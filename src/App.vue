@@ -1,7 +1,10 @@
 <script setup lang="ts">
-import { ref } from "vue";
 import Finder from "./pages/Finder.vue";
 import Launch from "./pages/Launch.vue";
+
+import DragRegion from "./components/DragRegion.vue";
+
+import { ref } from "vue";
 
 const showLaunch = ref(false);
 </script>
@@ -14,4 +17,6 @@ const showLaunch = ref(false);
   <template v-else>
     <Finder></Finder>
   </template>
+
+  <DragRegion data-tauri-drag-region class="absolute top-0"></DragRegion>
 </template>

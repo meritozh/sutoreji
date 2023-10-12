@@ -1,15 +1,14 @@
 <script setup lang="ts">
-import ToolBar from "../components/ToolBar.vue";
-import DragRegion from "../components/DragRegion.vue";
-import SideBar from "../components/SideBar.vue";
+import ToolItem from "../components/ToolItem.vue";
 import FileList from "../components/FileList.vue";
+import ToolBar from "../layouts/ToolBar.vue";
+import SideBar from "../layouts/SideBar.vue";
 
 </script>
 
 <template>
   <SideBar>
     <template v-slot:drawer-side>
-      <DragRegion></DragRegion>
       <ul class="menu px-4 pt-0 w-48 min-h-full text-base-content">
         <li><a>All</a></li>
         <li><a>Document</a></li>
@@ -18,7 +17,17 @@ import FileList from "../components/FileList.vue";
       </ul>
     </template>
     <template v-slot:drawer-content>
-      <ToolBar></ToolBar>
+      <ToolBar>
+        <template v-slot:left-group>
+          <ToolItem>1</ToolItem>
+          <ToolItem>2</ToolItem>
+        </template>
+        <template v-slot:right-group>
+          <ToolItem>3</ToolItem>
+          <ToolItem>4</ToolItem>
+          <ToolItem>5</ToolItem>
+        </template>
+      </ToolBar>
 
       <Suspense>
         <FileList />
