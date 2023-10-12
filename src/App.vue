@@ -1,13 +1,17 @@
 <script setup lang="ts">
-import FileList from "./components/FileList.vue";
+import { ref } from "vue";
+import Finder from "./pages/Finder.vue";
+import Launch from "./pages/Launch.vue";
+
+const showLaunch = ref(false);
 </script>
 
 <template>
-  <Suspense>
-    <FileList />
-
-    <template #fallback>
-      <div>Loading...</div>
-    </template>
-  </Suspense>
+  <template v-if="showLaunch">
+    <Launch></Launch>
+  </template>
+  
+  <template v-else>
+    <Finder></Finder>
+  </template>
 </template>
