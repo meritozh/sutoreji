@@ -23,7 +23,9 @@ import SideBar from "../layouts/SideBar.vue";
           <ToolItem>2</ToolItem>
         </template>
         <template v-slot:right-group>
-          <ToolItem>3</ToolItem>
+          <ToolItem>
+            <i-octicon-file-directory-open-fill-16 />
+          </ToolItem>
           <ToolItem>4</ToolItem>
           <ToolItem>5</ToolItem>
         </template>
