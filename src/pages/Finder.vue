@@ -24,10 +24,14 @@ import SideBar from "../layouts/SideBar.vue";
         </template>
         <template v-slot:right-group>
           <ToolItem>
-            <i-octicon-file-directory-open-fill-16 />
+            <i-octicon-file-directory-16 />
           </ToolItem>
-          <ToolItem>4</ToolItem>
-          <ToolItem>5</ToolItem>
+          <ToolItem>
+            <i-octicon-tag-16 />
+          </ToolItem>
+          <ToolItem>
+            <i-octicon-kebab-horizontal-16 />
+          </ToolItem>
         </template>
       </ToolBar>
 
