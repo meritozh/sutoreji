@@ -2,7 +2,7 @@
 import { invoke } from "@tauri-apps/api/tauri";
 import { ref } from "vue";
 
-let file_list = ref<String[]>(await invoke("get_dir_list", { path: "./" }));
+let file_list = ref<String[]>(await invoke("get_dir_list"));
 </script>
 
 <template>

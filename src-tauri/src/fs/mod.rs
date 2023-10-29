@@ -3,6 +3,8 @@
 // This software is released under the MIT License.
 // https://opensource.org/licenses/MIT
 
+use std::path::Path;
+
 use mime_guess::Mime;
 use tokio::{fs::read_dir, io};
 use thiserror::Error;
@@ -23,7 +25,13 @@ impl Serialize for CmdError {
 }
 
 #[tauri::command]
-pub async fn get_dir_list(path: String) -> Result<Vec<String>, CmdError> {
+pub async fn get_dir_list(path: Option<String>) -> Result<Vec<String>, CmdError> {
+    let path = if let Some(path) = path && path.len() != 0 {
+        Some(path.into())
+    } else {
+        dirs::home_dir()
+    }.unwrap(); 
+
     let mut reader = read_dir(path).await?;
     let mut file_list = vec![];
     while let Some(entry) = reader.next_entry().await? {
