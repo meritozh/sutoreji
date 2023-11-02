@@ -13,6 +13,7 @@
     "@tauri-apps/api": "^1.5.1",
     "@vueuse/components": "^10.5.0",
     "@vueuse/core": "^10.5.0",
+    "radix-vue": "^1.0.2",
     "vue": "^3.3.7"
   },
   "devDependencies": {
